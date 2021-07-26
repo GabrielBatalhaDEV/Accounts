@@ -3,7 +3,6 @@ import 'express-async-errors'
 
 import 'reflect-metadata'
 import './database'
-import { CreateAccounts1627156816273 } from './database/migrations/1627156816273-CreateAccounts'
 import { router } from './routes'
 const app = express()
 

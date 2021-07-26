@@ -26,6 +26,7 @@ router.get("/accounts",ensureAuth,listAccountsController.handle)
 router.post("/users",createUsersController.handle)
 router.post("/login",authenticateUserController.handle)
 router.post("/accounts",ensureAuth, createAccountsController.handle)
+router.post("/forgot_password")
 
 router.put("/accounts/:id",ensureAuth,updateAccountController.handle)
 

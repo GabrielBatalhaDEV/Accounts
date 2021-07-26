@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
-import {secret} from '../../secret.json'
+import {secret} from "../Config/auth.json"
 
 interface IPayload{
     sub: string

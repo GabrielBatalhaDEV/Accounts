@@ -2,8 +2,7 @@ import { compare } from "bcryptjs"
 import { sign } from "jsonwebtoken"
 import { getCustomRepository } from "typeorm"
 import { UsersRepositories } from "../Repositories/UsersRepositories"
-import {secret} from "../../secret.json"
-
+import {secret} from "../Config/auth.json"
 interface ILoginRequest{
     email: string,
     password: string
