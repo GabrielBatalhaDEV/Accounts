@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",                               
+    "module": "commonjs",                          
+    "strict": false,                                
+    "esModuleInterop": true,                       
+    "skipLibCheck": true,                          
+    "forceConsistentCasingInFileNames": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "resolveJsonModule": true,
+    "typeRoots": ["./src/@types"],
+    "lib": [ "es2015" ]
+      
+  }
+}
