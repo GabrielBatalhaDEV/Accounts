@@ -1,6 +1,8 @@
 - Cadastro de usuário
 
-    [ ] Não pode cadastrar um usuário com o mesmo email
+    [x] É obrigatório que o email e password estejam preenchido 
+
+    [x] Não pode cadastrar um usuário com o mesmo email
     
 - Cadastro de contas
 
@@ -8,4 +10,4 @@
 
     [ ] O usuário pode ver, editar ou deletar apenas suas próprias contas
 
-    
+    [ ] Titulo nao poder ser null

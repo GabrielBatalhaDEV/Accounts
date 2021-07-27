@@ -3,7 +3,8 @@ import { verify } from "jsonwebtoken";
 import {secret} from "../Config/auth.json"
 
 interface IPayload{
-    sub: string
+    sub: string,
+    method: string
 }
 
 
@@ -23,7 +24,11 @@ function ensureAuth(request: Request, response: Response, next: NextFunction){
 
     try {
         
-        const {sub} = verify(token,secret) as IPayload
+        const {sub, method} = verify(token,secret) as IPayload
+
+        if(method){
+            return response.status(401).json({error: "Invalid Token1"})
+        }
 
         request.user_id = sub
         

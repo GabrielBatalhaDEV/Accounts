@@ -32,7 +32,7 @@ export class CreateAccounts1627156816273 implements MigrationInterface {
                 },
                 {
                     name:"extras",
-                    type:"varchar",
+                    type:"json",
                     isNullable: true
                 },
                 {
