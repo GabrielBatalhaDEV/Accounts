@@ -1,4 +1,4 @@
-<h1 align="center">Accounts Service API</h1>
+<h1 align="center">Keep Your Accounts API</h1>
 
 <div align="center">
 
@@ -12,21 +12,9 @@
 ---
 
 <p align="center"> 
-    Uma API Rest feita com express para armazenar contas do cliente
+    Uma API Rest feita com express, typeorm para armazenar contas do cliente
     <br> 
 </p>
-
-## 📝 Table of Contents
-
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
 ## 🧐 Sobre <a name = "Sobre"></a>
 
@@ -35,7 +23,7 @@ Já teve algum momento que você percebeu que havias muitas contas em diferentes
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-### Prerequisites
+### Pré-requisitos
 
 Para usar essa API vc precisará destes pacotes:
 
@@ -110,6 +98,35 @@ Para Iniciar use o script:
 ``` -D
 yarn dev
 ```
+
+## Database <a name="database"></a>
+
+De começo o **ormconfig.json** virá configurado no banco de dados postgres, você pode modifica-los, de acordo com a documentação do [typeorm](https://typeorm.io/#/).
+
+**ormconfig**:
+
+```JSON
+
+{
+   "type": "postgres",
+   "host":"localhost",
+   "port":"5432",
+   "database": "Accounts",
+   "username":"postgres",
+   "password":"root",
+   "cli": {
+      "entitiesDir": "src/entities",
+      "migrationsDir": "src/database/migrations"
+   },
+   "entities": ["src/entities/*.ts"],
+   "migrations": ["src/database/migrations/*.ts"]
+   
+}
+
+```
+
+
+
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
