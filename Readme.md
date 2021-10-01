@@ -130,6 +130,8 @@ De começo o **ormconfig.json** virá configurado no banco de dados postgres, vo
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
+- [TypeOrm](https://typeorm.io/#/) - ORM
+
 - [PostgresSQL](https://www.postgresql.org) - Database
 - [Express](https://expressjs.com/) - Server Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environmentt.
