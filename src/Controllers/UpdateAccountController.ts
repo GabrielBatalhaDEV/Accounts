@@ -1,30 +1,28 @@
-import { Request, Response } from "express"
-import { UpdateAccountService } from "../Services/UpdateAccountService"
+import { Request, Response } from "express";
+import { UpdateAccountService } from "../Services/UpdateAccountService";
 
+class UpdateAccountController {
+  async handle(request: Request, response: Response) {
+    const { title, login, password, extras, categories } = request.body;
 
-class UpdateAccountController{
+    const { user_id } = request;
 
-    async handle(request: Request, response: Response){
+    const { id } = request.params;
 
-        const {
-            title,
-            login,
-            password,
-            extras
-        } = request.body
+    const updateAccountService = new UpdateAccountService();
 
-        const {user_id} = request
+    const account = await updateAccountService.execute({
+      id,
+      title,
+      login,
+      password,
+      extras,
+      user_id,
+      categories,
+    });
 
-        const {id} = request.params
-
-        const updateAccountService = new UpdateAccountService()
-
-        const account = await updateAccountService.execute({id ,title, login, password, extras, user_id})
-
-        return response.json(account)
-
-    }
-
+    return response.json(account);
+  }
 }
 
-export {UpdateAccountController}
+export { UpdateAccountController };

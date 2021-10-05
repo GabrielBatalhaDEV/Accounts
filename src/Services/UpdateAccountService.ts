@@ -8,35 +8,44 @@ interface IAccountRequest {
   password: string;
   extras: string;
   user_id: string;
+  categories: string;
 }
 
 class UpdateAccountService {
-  async execute({ id, title, login, password, extras, user_id }: IAccountRequest) {
+  async execute({
+    id,
+    title,
+    login,
+    password,
+    extras,
+    user_id,
+    categories,
+  }: IAccountRequest) {
     const accountRepository = getCustomRepository(AccountsRepositories);
 
-
     const authUser = await accountRepository.findOne({
-        where:{
-            id,
-            id_user: user_id
-        }
-    })
+      where: {
+        id,
+        id_user: user_id,
+      },
+    });
 
-    if(!authUser){
-        throw new Error("Account doesnt exists")
+    if (!authUser) {
+      throw new Error("Account doesnt exists");
     }
 
     const account = accountRepository.create({
-        id,
-        title,
-        login,
-        password,
-        extras
-    })
+      id,
+      title,
+      login,
+      password,
+      extras,
+      categories,
+    });
 
-    await accountRepository.save(account)
+    await accountRepository.save(account);
 
-    return account
+    return account;
   }
 }
 
