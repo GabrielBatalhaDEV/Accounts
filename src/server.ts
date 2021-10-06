@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 
@@ -25,6 +26,8 @@ app.use(
     });
   }
 );
+
+dotenv.config();
 
 app.listen(3000, () => {
   console.log("Server Running");
