@@ -5,6 +5,7 @@
 
 ### dotenv ###
 .env
+dist
 
 ### Node ###
 # Logs
