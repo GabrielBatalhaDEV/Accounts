@@ -1,4 +1,6 @@
 console.log("DATABASE_URL:>>", process.env.DATABASE_URL)
+console.log("MIGRATIONS:>>", process.env.MIGRATIONS)
+console.log("ENTITIES:>>", process.env.ENTITIES)
 
 module.exports = {
    "type": "postgres",
