@@ -10,6 +10,12 @@ module.exports = {
       "migrationsDir": "src/database/migrations"
    },
    "entities": [process.env.ENTITIES],
-   "migrations": [process.env.MIGRATIONS]
+   "migrations": [process.env.MIGRATIONS],
+   "ssl": true,
+  "extra": {
+    "ssl": {
+      "rejectUnauthorized": false
+    }
+  }
    
 }
