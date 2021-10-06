@@ -5,7 +5,7 @@ module.exports = {
       "entitiesDir": "src/entities",
       "migrationsDir": "src/database/migrations"
    },
-   "entities": [process.env.ENTITIES],
-   "migrations": [process.env.MIGRATIONS]
+   "entities": ["dist/entities/*.js"],
+   "migrations": ["dist/database/migrations/*.js"]
    
 }
