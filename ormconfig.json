@@ -1,10 +1,6 @@
 {
-   "type": "postgres",
-   "host":"localhost",
-   "port":"5432",
-   "database": "Accounts",
-   "username":"postgres",
-   "password":"root",
+   "type": "sqlite",
+   "database": "src/database/database.sqlite",
    "cli": {
       "entitiesDir": "src/entities",
       "migrationsDir": "src/database/migrations"

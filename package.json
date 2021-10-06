@@ -4,8 +4,10 @@
    "main": "index.js",
    "license": "MIT",
    "scripts": {
-      "start": "ts-node-dev src/server.ts",
-      "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+      "dev": "ts-node-dev src/server.ts",
+      "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+      "build": "tsc",
+      "start": "node dist/server.js"
    },
    "dependencies": {
       "bcryptjs": "^2.4.3",
@@ -19,6 +21,7 @@
       "nodemailer-express-handlebars": "^4.0.0",
       "pg": "^8.6.0",
       "reflect-metadata": "^0.1.10",
+      "sqlite3": "^5.0.2",
       "typeorm": "0.2.34",
       "uuid": "^8.3.2"
    },
