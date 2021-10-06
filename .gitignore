@@ -20,7 +20,7 @@ secret.json
 build/Release
 
 # Dependency directories
-node_modules/
+
 jspm_packages/
 
 # TypeScript cache
@@ -51,3 +51,4 @@ jspm_packages/
 !.vscode/extensions.json
 *.code-workspace
 
+node_modules
