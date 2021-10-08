@@ -1,17 +1,13 @@
 import { ExpressHandlebars } from "express-handlebars";
-import { createTransport } from "nodemailer";
-import hbs from "nodemailer-express-handlebars";
-import mailconfig from '../Config/mailconfig.json'
+import nodemailer from "nodemailer";
 
-const expressHandlebars = new ExpressHandlebars()
+var transport = nodemailer.createTransport({
+  host: "smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "3d54e474a5a11a",
+    pass: "ce1e8b4875ea4b",
+  },
+});
 
-const transport = createTransport(mailconfig)
-
-transport.use("compile", hbs({
-    viewEngine: expressHandlebars,
-    viewPath: "./src/resources/mail/*",
-    extName: ".html"
-
-}))
-
-export {transport}
+export { transport };

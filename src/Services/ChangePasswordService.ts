@@ -1,14 +1,15 @@
-import { hash } from "bcryptjs";
+import { hash, compare } from "bcryptjs";
 import { getCustomRepository } from "typeorm";
 import { UsersRepositories } from "../Repositories/UsersRepositories";
 
 interface IRequestUser {
+  new_password: string;
   password: string;
   id: string;
 }
 
-class RecoveryPasswordService {
-  async execute({ password, id }: IRequestUser) {
+class ChangePasswordService {
+  async execute({ password, id, new_password }: IRequestUser) {
     const userRepository = getCustomRepository(UsersRepositories);
 
     const userExists = await userRepository.findOne({ id });
@@ -17,7 +18,13 @@ class RecoveryPasswordService {
       throw new Error("User not found!");
     }
 
-    const hash_password = await hash(password, 8);
+    const pass_match = await compare(password, userExists.password);
+
+    if (!pass_match) {
+      throw new Error("Password Incorrect");
+    }
+
+    const hash_password = await hash(new_password, 8);
 
     const user = userRepository.create({
       id,
@@ -31,4 +38,4 @@ class RecoveryPasswordService {
   }
 }
 
-export { RecoveryPasswordService };
+export { ChangePasswordService };
