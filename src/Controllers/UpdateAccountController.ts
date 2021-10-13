@@ -3,7 +3,7 @@ import { UpdateAccountService } from "../Services/UpdateAccountService";
 
 class UpdateAccountController {
   async handle(request: Request, response: Response) {
-    const { title, login, password, extras, categories } = request.body;
+    const { title, login, password, extras, category } = request.body;
 
     const { user_id } = request;
 
@@ -18,7 +18,7 @@ class UpdateAccountController {
       password,
       extras,
       user_id,
-      categories,
+      category,
     });
 
     return response.json(account);

@@ -31,8 +31,8 @@ class Accounts {
   @Column()
   password: string;
 
-  @Column({ array: true })
-  categories: string;
+  @Column()
+  category: string;
 
   @Column()
   extras: string;

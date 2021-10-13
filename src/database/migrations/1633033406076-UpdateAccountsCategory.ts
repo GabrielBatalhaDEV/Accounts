@@ -5,8 +5,8 @@ export class UpdateUsersCategory1633032509945 implements MigrationInterface {
     await queryRunner.addColumn(
       "accounts",
       new TableColumn({
-        name: "categories",
-        type: "varchar[]",
+        name: "category",
+        type: "varchar",
       })
     );
   }
@@ -14,7 +14,7 @@ export class UpdateUsersCategory1633032509945 implements MigrationInterface {
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropColumn(
       "accounts",
-      new TableColumn({ name: "category", type: "array" })
+      new TableColumn({ name: "category", type: "varchar" })
     );
   }
 }

@@ -7,7 +7,7 @@ interface IAccountRequest {
   login?: string;
   password?: string;
   extras?: string;
-  categories: string;
+  category: string;
 }
 
 class CreateAccountService {
@@ -17,7 +17,7 @@ class CreateAccountService {
     login,
     password,
     extras,
-    categories,
+    category,
   }: IAccountRequest) {
     if (!title) {
       throw new Error("Unexpected Title");
@@ -31,7 +31,7 @@ class CreateAccountService {
       login,
       password,
       extras,
-      categories,
+      category,
     });
 
     await accountsRepositories.save(accounts);

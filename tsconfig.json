@@ -11,7 +11,7 @@
     "strictPropertyInitialization": false,
     "resolveJsonModule": true,
     "typeRoots": ["./src/@types"],
-    "lib": [ "es2015" ],
+    "lib": [ "es2018" ],
     "outDir": "dist"
       
   }

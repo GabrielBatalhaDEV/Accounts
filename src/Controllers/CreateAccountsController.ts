@@ -3,7 +3,7 @@ import { CreateAccountService } from "../Services/CreateAccountService";
 
 class CreateAccountsController {
   async handle(request: Request, response: Response) {
-    const { title, login, password, extras, categories } = request.body;
+    const { title, login, password, extras, category } = request.body;
 
     const createAccountsService = new CreateAccountService();
 
@@ -13,7 +13,7 @@ class CreateAccountsController {
       login,
       password,
       extras,
-      categories,
+      category,
     });
 
     return response.json(account);

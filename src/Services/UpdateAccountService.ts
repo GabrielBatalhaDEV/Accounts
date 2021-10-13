@@ -8,7 +8,7 @@ interface IAccountRequest {
   password: string;
   extras: string;
   user_id: string;
-  categories: string;
+  category: string;
 }
 
 class UpdateAccountService {
@@ -19,7 +19,7 @@ class UpdateAccountService {
     password,
     extras,
     user_id,
-    categories,
+    category,
   }: IAccountRequest) {
     const accountRepository = getCustomRepository(AccountsRepositories);
 
@@ -40,7 +40,7 @@ class UpdateAccountService {
       login,
       password,
       extras,
-      categories,
+      category,
     });
 
     await accountRepository.save(account);

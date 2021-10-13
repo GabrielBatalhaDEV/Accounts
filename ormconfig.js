@@ -3,7 +3,7 @@ console.log("MIGRATIONS:>>", process.env.MIGRATIONS)
 console.log("ENTITIES:>>", process.env.ENTITIES)
 console.log("PRODUCTION?:>>", process.env.ISPRODUCTION)
 
-const sslConfig = process.env.ISPRODUCTION ? null : {
+const sslConfig = process.env.ISPRODUCTION === 'false' ? null : {
   "ssl": true,
   "extra": {
     "ssl": {
@@ -26,4 +26,6 @@ const typeOrmConfig = {
 
 }
 
-module.exports = Object.assign(typeOrmConfig, sslConfig)
+const typeObject = Object.assign(typeOrmConfig, sslConfig)
+
+module.exports = typeObject
