@@ -11,7 +11,7 @@ class AuthenticateForgotPasswordService {
     const user = await userRepository.findOne({ email });
 
     if (!user) {
-      throw new Error("Email doesnt exists");
+      throw { message: "Email doesnt exists" };
     }
 
     const token = sign(
@@ -43,7 +43,7 @@ class AuthenticateForgotPasswordService {
     `,
       },
       (err) => {
-        throw new Error("Cannot send forgot password email");
+        throw { message: "Cannot send forgot password email" };
       }
     );
 

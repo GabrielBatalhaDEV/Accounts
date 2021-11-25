@@ -25,7 +25,7 @@ class GetAccountService {
     const user = await userRepository.findOne(id_user);
 
     if (!user) {
-      throw new Error("User Invalid");
+      throw { message: "User Invalid" };
     }
 
     const whereQuery = removeEmpty({ id, title, category, id_user });

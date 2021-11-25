@@ -15,13 +15,13 @@ class ChangePasswordService {
     const userExists = await userRepository.findOne({ id });
 
     if (!userExists) {
-      throw new Error("User not found!");
+      throw { message: "User not found!" };
     }
 
     const pass_match = await compare(password, userExists.password);
 
     if (!pass_match) {
-      throw new Error("Password Incorrect");
+      throw { message: "Password Incorrect" };
     }
 
     const hash_password = await hash(new_password, 8);

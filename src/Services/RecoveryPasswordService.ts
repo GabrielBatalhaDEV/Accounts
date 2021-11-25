@@ -14,7 +14,7 @@ class RecoveryPasswordService {
     const userExists = await userRepository.findOne({ id });
 
     if (!userExists) {
-      throw new Error("User not found!");
+      throw { message: "User not found!" };
     }
 
     const hash_password = await hash(password, 8);

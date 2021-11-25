@@ -45,7 +45,7 @@ Para usar essa API vc precisará destes pacotes:
 
 ### Instalação
 
-Para instala-los podemos usar o NPM ou YARN, o npm vem junto com o node, mas se quiser usar o YARN:
+Para instala-los podemos usar o NPM ou YARN, o npm vem junto com o node, mas caso queira usar o YARN:
 
 ```
 npm install -g yarn

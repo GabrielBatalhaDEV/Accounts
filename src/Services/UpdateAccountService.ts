@@ -31,7 +31,7 @@ class UpdateAccountService {
     });
 
     if (!authUser) {
-      throw new Error("Account doesnt exists");
+      throw { message: "Account doesnt exists" };
     }
 
     const account = accountRepository.create({

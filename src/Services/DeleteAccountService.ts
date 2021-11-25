@@ -18,7 +18,7 @@ class DeleteAccountService {
     });
 
     if (!account) {
-      throw new Error("Account doesnt exists");
+      throw { message: "Account doesnt exists" };
     }
 
     await accountRepository.delete(id);

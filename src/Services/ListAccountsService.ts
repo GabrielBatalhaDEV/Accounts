@@ -2,26 +2,21 @@ import { getCustomRepository } from "typeorm";
 import { AccountsRepositories } from "../Repositories/AccountsRepositories";
 import { UsersRepositories } from "../Repositories/UsersRepositories";
 
+class ListAccountsService {
+  async execute(id_user: string) {
+    const usersRepository = getCustomRepository(UsersRepositories);
+    const accountsRepository = getCustomRepository(AccountsRepositories);
 
-class ListAccountsService{
-    async execute(id_user: string){
+    const userExists = await usersRepository.findOne({ id: id_user });
 
-        const usersRepository = getCustomRepository(UsersRepositories)
-        const accountsRepository = getCustomRepository(AccountsRepositories)
-
-        const userExists = await usersRepository.findOne({id: id_user})
-
-        if(!userExists){
-            throw new Error("User Invalid")
-        }
-
-        const accounts = await accountsRepository.find({id_user})
-
-        
-        return accounts
-
-
+    if (!userExists) {
+      throw { message: "User Invalid" };
     }
+
+    const accounts = await accountsRepository.find({ id_user });
+
+    return accounts;
+  }
 }
 
-export {ListAccountsService}
+export { ListAccountsService };

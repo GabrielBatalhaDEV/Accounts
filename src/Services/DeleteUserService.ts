@@ -14,7 +14,7 @@ class DeleteUserService {
     const user = await userRepository.findOne(id);
 
     if (!user) {
-      throw new Error("User doesnt exists!");
+      throw { message: "User doesnt exists!" };
     }
 
     const accounts = await accountsRepositories.find({

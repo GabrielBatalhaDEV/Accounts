@@ -20,7 +20,7 @@ class CreateAccountService {
     category,
   }: IAccountRequest) {
     if (!title) {
-      throw new Error("Unexpected Title");
+      throw { message: "Unexpected Title" };
     }
 
     const accountsRepositories = getCustomRepository(AccountsRepositories);
