@@ -27,7 +27,7 @@ function ensureAuth(request: Request, response: Response, next: NextFunction){
         const {sub, method} = verify(token,secret) as IPayload
 
         if(method){
-            return response.status(401).json({error: "Invalid Token1"})
+            return response.status(401).json({error: "Invalid Token"})
         }
 
         request.user_id = sub
