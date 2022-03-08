@@ -33,7 +33,7 @@ const deleteAccountController = new DeleteAccountController();
 const deleteUserController = new DeleteUserController();
 
 router.get("/accounts", ensureAuth, listAccountsController.handle);
-router.get("/accounts/search/:id", ensureAuth, getAccountController.handle);
+router.get("/accounts/:id", ensureAuth, getAccountController.handle);
 
 router.post("/users", createUsersController.handle);
 router.post("/login", authenticateUserController.handle);

@@ -12,7 +12,7 @@ class CreateUsersService {
     const userRepository = getCustomRepository(UsersRepositories);
 
     if (!email || !password) {
-      throw { message: "Email already exists" };
+      throw { message: "Empty Field(s)" };
     }
 
     const userAlreadyExists = await userRepository.findOne({ email });
