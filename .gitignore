@@ -4,7 +4,6 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,node,dotenv
 
 ### dotenv ###
-.env
 dist
 
 ### Node ###
